@@ -1491,6 +1491,28 @@ public class BasePanel extends JPanel implements ClipboardOwner, FileUpdateListe
 
                 }
               });
+              
+              actions.put("markRed", new AbstractWorker() {
+                  private int besLength = -1;
+                public void run() {
+
+                  NamedCompound ce = new NamedCompound(Globals.lang("Mark with red"));
+                  BibtexEntry[] bes = mainTable.getSelectedEntries();
+                  besLength = bes.length;
+
+                  for (int i=0; i<bes.length; i++) {
+                      Util.markEntry(bes[i], 3, true, ce);
+                  }
+                  ce.end();
+                  undoManager.addEdit(ce);
+                }
+
+                public void update() {
+                  markBaseChanged();
+                  output(Globals.lang("Marked selected")+" "+Globals.lang(besLength>0?"entry":"entries"));
+
+                }
+              });
 
               actions.put("unmarkEntries", new BaseAction() {
                 public void action() {

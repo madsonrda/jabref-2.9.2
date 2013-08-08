@@ -212,6 +212,9 @@ public class JabRefFrame extends JFrame implements OutputPrinter {
       mark = new GeneralAction("markEntries", "Mark entries",
                                Globals.lang("Mark entries"),
                                prefs.getKey("Mark entries")),
+       markRed = new GeneralAction("markRed", "Mark with red",
+                               Globals.lang("Mark with red"),
+                               prefs.getKey("Mark entries")),
        unmark = new GeneralAction("unmarkEntries", "Unmark entries",
                                   Globals.lang("Unmark entries"),
                                   prefs.getKey("Unmark entries")),
@@ -1283,6 +1286,7 @@ public JabRefPreferences prefs() {
       //edit.add(exportToClipboard);
       edit.addSeparator();
       edit.add(mark);
+      edit.add(markRed);
       JMenu markSpecific = subMenu("Mark specific color");
       for (int i=0; i<Util.MAX_MARKING_LEVEL; i++)
           markSpecific.add(new MarkEntriesAction(this, i).getMenuItem());
