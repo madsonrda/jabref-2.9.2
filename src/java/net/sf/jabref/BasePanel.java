@@ -1501,7 +1501,7 @@ public class BasePanel extends JPanel implements ClipboardOwner, FileUpdateListe
                   besLength = bes.length;
 
                   for (int i=0; i<bes.length; i++) {
-                      Util.markEntry(bes[i], 3, true, ce);
+                      Util.markEntry(bes[i], 5, true, ce);
                   }
                   ce.end();
                   undoManager.addEdit(ce);
