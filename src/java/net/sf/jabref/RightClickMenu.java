@@ -128,14 +128,14 @@ public class RightClickMenu extends JPopupMenu
 
             });
             
-            add(new AbstractAction(Globals.lang("Mark with red"), GUIGlobals.getImage("markRed")) {
-                public void actionPerformed(ActionEvent e) {
-                    try {
-                        panel.runCommand("markRed");
-                    } catch (Throwable ex) {}
-                }
-                
-            });
+//            add(new AbstractAction(Globals.lang("Mark with red"), GUIGlobals.getImage("markRed")) {
+//                public void actionPerformed(ActionEvent e) {
+//                    try {
+//                        panel.runCommand("markRed");
+//                    } catch (Throwable ex) {}
+//                }
+//                
+//            });
 
             add(markSpecific);
 
@@ -158,13 +158,13 @@ public class RightClickMenu extends JPopupMenu
                     }
                 });
                 
-                add(new AbstractAction(Globals.lang("Mark with red"), GUIGlobals.getImage("markRed")) {
-                    public void actionPerformed(ActionEvent e) {
-                        try {
-                            panel.runCommand("markRed");
-                        } catch (Throwable ex) {}
-                    }
-                });
+//                add(new AbstractAction(Globals.lang("Mark with red"), GUIGlobals.getImage("markRed")) {
+//                    public void actionPerformed(ActionEvent e) {
+//                        try {
+//                            panel.runCommand("markRed");
+//                        } catch (Throwable ex) {}
+//                    }
+//                });
 
                 add(markSpecific);
             } else {
